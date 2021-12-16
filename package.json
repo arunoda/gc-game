@@ -1,6 +1,9 @@
 {
   "scripts": {
     "play": "node ./bin/game-default",
+    "play-tic-tac-toa": "node ./bin/game-tic-tac-toa",
+    "play-duo": "node ./bin/game-duo",
+    "play-robots": "node ./bin/game-robots",
     "test": "jest"
   },
   "devDependencies": {
