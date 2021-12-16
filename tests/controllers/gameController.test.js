@@ -79,4 +79,29 @@ describe("GameController", () => {
             expect(hasWin).toBe(false);
         })
     })
+
+    describe("validColIds", () => {
+        it('should give all if no items in the board', () => {
+            const board = new Board(3, 3);
+            const human = new HumanPlayer("arunoda", "+");
+            const robot = new DumbPlayer("robot", "-");
+            const gc = new GameController(board, human, robot, 2);
+
+            expect(gc.getValidColIds()).toEqual([0, 1, 2]);
+        });
+
+        it('should give ignore filled cols', () => {
+            const board = new Board(3, 3);
+            const human = new HumanPlayer("arunoda", "+");
+            const robot = new DumbPlayer("robot", "-");
+            const gc = new GameController(board, human, robot, 2);
+
+            board.addItem(0, new BoardItem(human.id));
+            board.addItem(1, new BoardItem(human.id));
+            board.addItem(1, new BoardItem(human.id));
+            board.addItem(1, new BoardItem(human.id));
+
+            expect(gc.getValidColIds()).toEqual([0, 2]);
+        });
+    })
 })

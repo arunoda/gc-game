@@ -1,5 +1,6 @@
 {
   "scripts": {
+    "play": "node ./bin/game-default",
     "test": "jest"
   },
   "devDependencies": {
