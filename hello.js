@@ -11,11 +11,11 @@ const GameController = require("./lib/controllers/GameController")
 
 // -----
 
-const board = new Board(2, 3);
+const board = new Board(3, 3);
 const human = new HumanPlayer("arunoda", "+");
 const robot = new DumbPlayer("robot", "-");
 
-const gameController = new GameController(board, human, robot);
+const gameController = new GameController(board, human, robot, 2);
 gameController.start();
 
 // // ----------
